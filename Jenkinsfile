@@ -37,6 +37,7 @@ pipeline {
                 sh 'docker pull "$ECR_REGISTRY/$APP_REPO_NAME:latest"'
                 sh 'docker rm -f todo'
                 sh 'docker run --name todo -dp 80:3000 "$ECR_REGISTRY/$APP_REPO_NAME:latest"'
+                sh 'docker rm -f todo'
             }
         }
     }
